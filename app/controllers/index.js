@@ -1,11 +1,11 @@
 import Controller from "@ember/controller";
-import { computed, observer } from "@ember/object";
 import { match, not } from "@ember/object/computed";
 
 export default Controller.extend({
   emailAddress: "",
   isValid: match("emailAddress", /^.+@.+\..+$/),
   isDisabled: not("isValid"),
+  headerMessage: "Coming Soon",
   actions: {
     saveInvitation() {
       alert(
