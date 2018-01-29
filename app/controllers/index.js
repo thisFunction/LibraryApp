@@ -11,7 +11,7 @@ export default Controller.extend({
     saveInvitation() {
         const email = this.get('emailAddress');
         const newInvitation = this.store.createRecord('invitation', { email: email });
-        newInvitation.save().then(response => {
+        newInvitation.save().then(() => {
           this.set('responseMessage', `Thank you! We have just saved your email address: ${get(this, 'emailAddress')}`);
           this.set('emailAddress', '');
         });

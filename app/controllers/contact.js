@@ -14,7 +14,7 @@ export default Controller.extend({
         email: email,
         message: message
       });
-      newMessage.save().then(response => {
+      newMessage.save().then(() => {
         var responseMessage = "To: " + email + ", Message: " + message;
         this.set("responseMessage", responseMessage);
         this.set("emailAddress", "");
