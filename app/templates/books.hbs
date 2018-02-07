@@ -1,1 +1,28 @@
-{{outlet}}
+<h1>Books</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Library</th>            
+        </tr>
+    </thead>
+    <tbody>
+        {{#each model as |book|}}
+        <tr>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.releaseYear}}</td>
+            <td>
+                <ul>
+                    {{#each book.library as |lib|}}
+                    <li>{{lib.name}}</li>
+                    {{/each}}
+                </ul>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
