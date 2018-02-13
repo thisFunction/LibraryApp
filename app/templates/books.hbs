@@ -13,15 +13,9 @@
         {{#each model as |book|}}
         <tr>
             <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.releaseYear}}</td>
-            <td>
-                <ul>
-                    {{#each book.library as |lib|}}
-                    <li>{{lib.name}}</li>
-                    {{/each}}
-                </ul>
-            </td>
+            <td>{{book.author.name}}</td>
+            <td>{{date-formatter book.releaseYear}}</td>
+            <td>{{book.library.name}}</td>
         </tr>
         {{/each}}
     </tbody>

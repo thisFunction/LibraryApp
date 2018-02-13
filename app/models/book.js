@@ -18,7 +18,8 @@ export default DS.Model.extend({
   },
 
   _bookTitle() {
-    return `The ${Faker.commerce.productName()} Bible`;
+    const bookName = Faker.commerce.productName(1).replace(/ /g, "-")
+    return `${bookName}.js for Dummies`;
   },
 
   _randomYear() {
